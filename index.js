@@ -54,7 +54,7 @@ app.post('/send', function(request, response) {
 	console.log(userInfo[2]);
 	console.log(userInfo[3]);
 
-  response.render('pages/index');
+  response.send(list);
 });
 
 app.listen(app.get('port'), function() {
