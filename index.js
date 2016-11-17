@@ -42,19 +42,19 @@ app.post('/send', function(request, response) {
 		console.log("mode = "+ analyzerMode);
 	}
 
-
 	var start = list[3].indexOf('#');
 
 	var btnNumber = list[3].substring(start+1, start+2);
-	var userInfo = list[4].split(" ");
+	var userList = new Arry();
+	userList[0] = list[4].split(" ");
+	userList[1] = list[3].split(" ");
 
 	console.log("btnNumber = "+ btnNumber);
-	console.log(userInfo[0]);
-	console.log(userInfo[1]);
-	console.log(userInfo[2]);
-	console.log(userInfo[3]);
+	
+	console.log(userList[0]);
+	console.log(userList[1]);
 
-  response.send(list);
+  response.send(userList);
 });
 
 app.listen(app.get('port'), function() {
