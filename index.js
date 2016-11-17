@@ -22,11 +22,24 @@ app.post('/send', function(request, response) {
 
 	var list = request.body.message.split("\n");
 
-	var regexp = new RegExp('\*\*\*','g');
+	var analyzerMode = "BASIC";
 
 	for(var i=0; i < list.length; i++) {
+				
+		if(list[i].indexOf("*** HOLE CARDS ***") != -1) {
+			analyzerMode = "PRE-FLOP";
+		} else if(list[i].indexOf("*** FLOP ***") != -1) {
+			analyzerMode = "FLOP";
+		} else if(list[i].indexOf("*** TURN ***") != -1) {
+			analyzerMode = "TURN";
+		} else if(list[i].indexOf("*** RIVER ***") != -1) {
+			analyzerMode = "RIVER";
+		} else if(list[i].indexOf("*** SHOW DOWN ***") != -1) {
+			analyzerMode = "SHOW DOWN";
+		}
+
 		console.log("list "+(i+1) +" = " + list[i]);
-		console.log(regexp.test(list[i]));
+		console.log("mode = "+ analyzerMode);
 	}
 
 
