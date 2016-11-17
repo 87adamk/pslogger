@@ -27,10 +27,16 @@ app.post('/send', function(request, response) {
 	}
 
 
-	var start = list[2].indexOf('#');
+	var start = list[3].indexOf('#');
 
-	var btnNumber = list[2].substring(start+1, start+2);
+	var btnNumber = list[3].substring(start+1, start+2);
+	var userInfo = list[4].split(" ");
+
 	console.log("btnNumber = "+ btnNumber);
+	console.log(userInfo[0]);
+	console.log(userInfo[1]);
+	console.log(userInfo[2]);
+	console.log(userInfo[3]);
 
   response.render('pages/index');
 });
