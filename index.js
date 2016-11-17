@@ -23,7 +23,7 @@ app.post('/send', function(request, response) {
 	var list = request.body.message.split("\n");
 
 	for(var i=0; i < list.length; i++) {
-		console.log("list "+(i+1) +" = " + ilist[i]);
+		console.log("list "+(i+1) +" = " + list[i]);
 	}
 
   response.render('pages/index');
