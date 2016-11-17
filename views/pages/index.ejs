@@ -18,7 +18,10 @@
   약관보기
 </button>
 
-<input type=text />
+<form action="/send" method="post">
+  <textarea name="message"></textarea>
+  <input type="submit" value="Send message" />
+</form>
 
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
