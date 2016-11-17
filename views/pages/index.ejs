@@ -7,6 +7,10 @@
 <script type="text/javascript">
   $('#myModal').on('shown.bs.modal', function () {
   $('#myInput').focus()})
+
+  function processing() {
+
+  }
 </script>
 
 <body>
@@ -19,8 +23,11 @@
 </button>
 
 <form action="/send" method="post">
-  <textarea name="message"></textarea>
-  <input type="submit" value="Send message" />
+  <textarea id="message" name="message"></textarea>
+  <input type="submit" />
+  <!-- <button type="button" class="btn btn-primary btn-lg" onclick="processing();">
+  분석
+  </button> -->
 </form>
 
 <!-- Modal -->

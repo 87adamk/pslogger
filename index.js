@@ -18,7 +18,14 @@ app.get('/', function(request, response) {
 });
 
 app.post('/send', function(request, response) {
-	console.log(request.body.message);
+	//console.log(request.body.message);
+
+	var list = request.body.message.split("\n");
+
+	for(var i=0; i < list.length; i++) {
+		console.log("list "+(i+1) +" = " + ilist[i]);
+	}
+
   response.render('pages/index');
 });
 
@@ -27,3 +34,14 @@ app.listen(app.get('port'), function() {
 });
 
 
+//community-card:
+//pot
+
+
+// player
+// name: jj
+// hands: AA
+// stack: $2
+// bet: check/bet
+// position: 
+// status: playing / folded
