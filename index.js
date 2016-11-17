@@ -26,6 +26,12 @@ app.post('/send', function(request, response) {
 		console.log("list "+(i+1) +" = " + list[i]);
 	}
 
+
+	var start = list[2].indexOf('#');
+
+	var btnNumber = list[2].substring(start+1, start+2);
+	console.log("btnNumber = "+ btnNumber);
+
   response.render('pages/index');
 });
 
