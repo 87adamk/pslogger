@@ -22,8 +22,11 @@ app.post('/send', function(request, response) {
 
 	var list = request.body.message.split("\n");
 
+	var regexp = /^"***"/;
+
 	for(var i=0; i < list.length; i++) {
 		console.log("list "+(i+1) +" = " + list[i]);
+		console.log(regexp.exec(list[i]));
 	}
 
 
@@ -57,3 +60,39 @@ app.listen(app.get('port'), function() {
 // bet: check/bet
 // position: 
 // status: playing / folded
+
+/*
+PS : { 
+		BASIC :
+		[
+			{
+				name: jjack ott,
+				seat: 1,
+				chips: $0.96,
+				position:
+			},
+
+		],
+		PRE-FLOP :
+		[
+
+			{
+				name: 4erepah63,
+				action: raises $0.04 to $0.06
+			},
+			{
+				name: sinchaLTB
+				action: folds
+			}
+		],
+		FLOP :
+		[
+		],
+		TURN :
+		[
+		],
+		RIVER :
+		[
+		]
+	}
+*/
