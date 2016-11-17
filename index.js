@@ -22,11 +22,11 @@ app.post('/send', function(request, response) {
 
 	var list = request.body.message.split("\n");
 
-	var regexp = /^"***"/;
+	var regexp = new RegExp('"***"');
 
 	for(var i=0; i < list.length; i++) {
 		console.log("list "+(i+1) +" = " + list[i]);
-		console.log(regexp.exec(list[i]));
+		console.log(regexp.test(list[i]));
 	}
 
 
