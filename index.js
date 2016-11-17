@@ -45,7 +45,7 @@ app.post('/send', function(request, response) {
 	var start = list[3].indexOf('#');
 
 	var btnNumber = list[3].substring(start+1, start+2);
-	var userList = new Arry();
+	var userList = new Array();
 	userList[0] = list[4].split(" ");
 	userList[1] = list[3].split(" ");
 
